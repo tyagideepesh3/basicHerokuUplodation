@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const todoRoutes = require('./routes/todo')
+const port = process.env.PORT || 4321
 const path = require('path')
 const srv = express();
 
@@ -12,6 +13,6 @@ srv.set('view engine' , 'hbs');
 
 srv.use('/todos' , todoRoutes);
 
-srv.listen(4321 , () => {
+srv.listen(port , () => {
     console.log('this is starting of the server')
 })
